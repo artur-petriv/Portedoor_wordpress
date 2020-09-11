@@ -7,69 +7,47 @@
 			</div>
 		</div>
 		<div class="main__galerry owl-carousel owl-main">
-			<div class="main__item">
-				<div class="main__parts">
-					<div class="main__part main__part-first">
-						<div class="main__left">
-							<div class="main__content">
-								<h2 class="main__title">— Special Offer, Doors «Standart» from 60$</h2>
-								<div class="main__list">
-									<div class="main__li">Low price, limited quantity in stock</div>
-									<div class="main__li">Offer available until <span class="expire"></span></div>
+
+			<!-- Render category 'main_slider posts -->
+			<?php
+				$posts = get_posts( array(
+					'numberposts' => -1,
+					'category'    => 'main_slider',
+					'orderby'     => 'date',
+					'order'       => 'ASC',
+					'post_type'   => 'post',
+					'suppress_filters' => true,
+				) );
+
+				foreach( $posts as $post ){
+					setup_postdata($post);
+						?>
+						<div class="main__item">
+							<div class="main__parts">
+								<div class="main__part main__part-first">
+									<div class="main__left">
+										<div class="main__content">
+											<h2 class="main__title"><?php the_title(); ?></h2>
+											<div class="main__list">
+												<div class="main__li"><?php the_field('item-descr-1'); ?></div>
+												<div class="main__li"><?php the_field('item-descr-2'); ?> <span class="expire"></span></div>
+											</div>
+											<div class="main__button button_c btn"><?php the_field('button-text'); ?></div>
+										</div>
+									</div>
 								</div>
-								<div class="main__button button_c btn">Redeem</div>
+								<div class="main__part">
+									<div class="main__right">
+										<div class="main__image"><img class="main__img" src="<?php the_field('slider_img'); ?>" alt="Standart"></div>
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="main__part">
-						<div class="main__right">
-							<div class="main__image"><img class="main__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/header__01.jpg" alt="Standart"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="main__item">
-				<div class="main__parts">
-					<div class="main__part main__part-first">
-						<div class="main__left">
-							<div class="main__content">
-								<h2 class="main__title">— Special Offer, Doors «Eva» from 100$</h2>
-								<div class="main__list">
-									<div class="main__li">Low price, limited quantity in stock</div>
-									<div class="main__li">Offer available until <span class="expire"></span></div>
-								</div>
-								<div class="main__button button_c btn">Redeem</div>
-							</div>
-						</div>
-					</div>
-					<div class="main__part">
-						<div class="main__right">
-							<div class="main__image"><img class="main__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/header__02.jpg" alt="Eva"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="main__item">
-				<div class="main__parts">
-					<div class="main__part main__part-first">
-						<div class="main__left">
-							<div class="main__content">
-								<h2 class="main__title">— Special Offer, Doors «Domino» from 230$</h2>
-								<div class="main__list">
-									<div class="main__li">Low price, limited quantity in stock</div>
-									<div class="main__li">Offer available until <span class="expire"></span></div>
-								</div>
-								<div class="main__button button_c btn">Redeem</div>
-							</div>
-						</div>
-					</div>
-					<div class="main__part">
-						<div class="main__right">
-							<div class="main__image"><img class="main__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/header__03.jpg" alt="Domino"></div>
-						</div>
-					</div>
-				</div>
-			</div>
+					<?php
+					}
+				wp_reset_postdata();
+			?>
+
 		</div>
 	</main>
 	<section class="advantage" id="adv">
