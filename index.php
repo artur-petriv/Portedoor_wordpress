@@ -601,7 +601,7 @@
 			</div>
 		</div>
 		<div class="section__head">
-			<h3 class="section__title">Door frame, parts, hardware</h3>
+			<h3 class="section__title">Doors to the Interior</h3>
 		</div>
 		<div class="container">
 			<div class="doors__slider owl-carousel owl-frame">
