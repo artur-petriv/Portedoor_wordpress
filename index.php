@@ -8,7 +8,7 @@
 		</div>
 		<div class="main__galerry owl-carousel owl-main">
 
-			<!-- Render category 'main_slider posts -->
+			<!-- Render category 'main_slider' posts -->
 			<?php
 				$posts = get_posts( array(
 					'numberposts' => -1,
@@ -47,6 +47,7 @@
 					}
 				wp_reset_postdata();
 			?>
+			<!-- End Render category 'main_slider' posts -->
 
 		</div>
 	</main>
@@ -158,285 +159,56 @@
 	<section class="best">
 		<div class="container container__slide" id="container">
 			<div class="section__head">
-				<h3 class="section__title"></h3>
+				<h3 class="section__title">Best Sellers</h3>
 			</div>
 			<div class="best__list owl-carousel owl-best">
-				<div class="best__item">
-					<div class="best__image">
-						<div class="bs__container">
-							<div class="bs__wrap">
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_01_1.jpg" alt="Item"></div>
+
+				<!-- Render category 'best-sellers' posts -->
+				<?php
+					$posts = get_posts( array(
+						'numberposts' => -1,
+						'category'    => 'best-sellers',
+						'orderby'     => 'date',
+						'order'       => 'DESC',
+						'post_type'   => 'post',
+						'suppress_filters' => true,
+					) );
+
+					foreach( $posts as $post ){
+						setup_postdata($post);
+							?>
+								<div class="best__item">
+									<div class="best__image">
+										<div class="bs__container">
+											<div class="bs__wrap">
+												<div class="bs__item">
+													<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_01_1.jpg" alt="Item"></div>
+												</div>
+												<div class="bs__item">
+													<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_01_1.jpg" alt="Item"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="best__content">
+										<div class="best__title"><?php the_title(); ?></div>
+										<div class="best__price">from 135 $</div>
+										<div class="best__descr">Material: Wood + MDF + Acoustic Filler</div>
+										<div class="best__colors">
+											<div class="best__colors-title">Colors:</div>
+											<div class="best__colors-list">
+												<div class="best__color color-sand"></div>
+											</div>
+										</div>
+									</div>
+									<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a discount</span></button></div>
 								</div>
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_01_1.jpg" alt="Item"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="best__content">
-						<div class="best__title">Alta</div>
-						<div class="best__price">from 135 $</div>
-						<div class="best__descr">Material: Wood + MDF + Acoustic Filler</div>
-						<div class="best__colors">
-							<div class="best__colors-title">Colors:</div>
-							<div class="best__colors-list">
-								<div class="best__color color-sand"></div>
-							</div>
-						</div>
-					</div>
-					<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a
-								discount</span></button></div>
-				</div>
-				<div class="best__item">
-					<div class="best__image">
-						<div class="bs__container">
-							<div class="bs__wrap">
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_02_2.png" alt="Item"></div>
-								</div>
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_02_2.png" alt="Item"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="best__content">
-						<div class="best__title">Vera</div>
-						<div class="best__price">from 90 $</div>
-						<div class="best__descr">Material: Wood + MDF + Acoustic Filler</div>
-						<div class="best__colors">
-							<div class="best__colors-title">Colors:</div>
-							<div class="best__colors-list">
-								<div class="best__color color-silver"></div>
-							</div>
-						</div>
-					</div>
-					<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a
-								discount</span></button></div>
-				</div>
-				<div class="best__item">
-					<div class="best__image">
-						<div class="bs__container">
-							<div class="bs__wrap">
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_03_1.jpg" alt="Item"></div>
-								</div>
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_03_2.jpg" alt="Item"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="best__content">
-						<div class="best__title">Standart</div>
-						<div class="best__price">from 60 $</div>
-						<div class="best__descr">Material: Wood + MDF + Acoustic Filler</div>
-						<div class="best__colors">
-							<div class="best__colors-title">Colors:</div>
-							<div class="best__colors-list">
-								<div class="best__color color-dark-wood"></div>
-								<div class="best__color color-silver"></div>
-							</div>
-						</div>
-					</div>
-					<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a
-								discount</span></button></div>
-				</div>
-				<div class="best__item">
-					<div class="best__image">
-						<div class="bs__container">
-							<div class="bs__wrap">
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_04_1.jpg" alt="Item"></div>
-								</div>
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_04_1.jpg" alt="Item"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="best__content">
-						<div class="best__title">Kamea</div>
-						<div class="best__price">from 90 $</div>
-						<div class="best__descr">Material: Wood + MDF + Acoustic Filler</div>
-						<div class="best__colors">
-							<div class="best__colors-title">Colors:</div>
-							<div class="best__colors-list">
-								<div class="best__color color-silver"></div>
-							</div>
-						</div>
-					</div>
-					<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a
-								discount</span></button></div>
-				</div>
-				<div class="best__item">
-					<div class="best__image">
-						<div class="bs__container">
-							<div class="bs__wrap">
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_05_1.jpg" alt="Item"></div>
-								</div>
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_05_2.jpg" alt="Item"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="best__content">
-						<div class="best__title">Office</div>
-						<div class="best__price">from 90 $</div>
-						<div class="best__descr">Material: Wood + MDF + Acoustic Filler</div>
-						<div class="best__colors">
-							<div class="best__colors-title">Colors:</div>
-							<div class="best__colors-list">
-								<div class="best__color color-sand"></div>
-								<div class="best__color color-dirt"></div>
-							</div>
-						</div>
-					</div>
-					<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a
-								discount</span></button></div>
-				</div>
-				<div class="best__item">
-					<div class="best__image">
-						<div class="bs__container">
-							<div class="bs__wrap">
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_06_1.jpg" alt="Item"></div>
-								</div>
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_06_1.jpg" alt="Item"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="best__content">
-						<div class="best__title">Gloria</div>
-						<div class="best__price">from 80 $</div>
-						<div class="best__descr">Material: Wood + MDF + Acoustic Filler</div>
-						<div class="best__colors">
-							<div class="best__colors-title">Colors:</div>
-							<div class="best__colors-list">
-								<div class="best__color color-sand"></div>
-								<div class="best__color color-silver"></div>
-							</div>
-						</div>
-					</div>
-					<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a
-								discount</span></button></div>
-				</div>
-				<div class="best__item">
-					<div class="best__image">
-						<div class="bs__container">
-							<div class="bs__wrap">
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_07_1.jpg" alt="Item"></div>
-								</div>
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_07_1.jpg" alt="Item"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="best__content">
-						<div class="best__title">Alta with dark glass</div>
-						<div class="best__price">from 160 $</div>
-						<div class="best__descr">Material: Wood + MDF + Acoustic Filler</div>
-						<div class="best__colors">
-							<div class="best__colors-title">Colors:</div>
-							<div class="best__colors-list">
-								<div class="best__color color-dirt"></div>
-							</div>
-						</div>
-					</div>
-					<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a
-								discount</span></button></div>
-				</div>
-				<div class="best__item">
-					<div class="best__image">
-						<div class="bs__container">
-							<div class="bs__wrap">
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_08_1.jpg" alt="Item"></div>
-								</div>
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_08_2.jpg" alt="Item"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="best__content">
-						<div class="best__title">Eva</div>
-						<div class="best__price">from 100 $</div>
-						<div class="best__descr">Material: Wood + MDF + Acoustic Filler</div>
-						<div class="best__colors">
-							<div class="best__colors-title">Colors:</div>
-							<div class="best__colors-list">
-								<div class="best__color color-silver"></div>
-								<div class="best__color color-dark-wood"></div>
-							</div>
-						</div>
-					</div>
-					<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a
-								discount</span></button></div>
-				</div>
-				<div class="best__item">
-					<div class="best__image">
-						<div class="bs__container">
-							<div class="bs__wrap">
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_09_1.jpg" alt="Item"></div>
-								</div>
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_09_2.jpg" alt="Item"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="best__content">
-						<div class="best__title">Domino</div>
-						<div class="best__price">from 230 $</div>
-						<div class="best__descr">Material: solid wood + MDF</div>
-						<div class="best__colors">
-							<div class="best__colors-title">Colors:</div>
-							<div class="best__colors-list">
-								<div class="best__color color-dirt"></div>
-								<div class="best__color color-sand"></div>
-							</div>
-						</div>
-					</div>
-					<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a
-								discount</span></button></div>
-				</div>
-				<div class="best__item">
-					<div class="best__image">
-						<div class="bs__container">
-							<div class="bs__wrap">
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_09_1.jpg" alt="Item"></div>
-								</div>
-								<div class="bs__item">
-									<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_09_2.jpg" alt="Item"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="best__content">
-						<div class="best__title">Domino without glass</div>
-						<div class="best__price">from 230 $</div>
-						<div class="best__descr">Material: solid wood + MDF</div>
-						<div class="best__colors">
-							<div class="best__colors-title">Colors:</div>
-							<div class="best__colors-list">
-								<div class="best__color color-sand"></div>
-								<div class="best__color color-dirt"></div>
-							</div>
-						</div>
-					</div>
-					<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a
-								discount</span></button></div>
-				</div>
+							<?php
+					}
+					wp_reset_postdata(); // сброс
+				?>
+				<!-- End Render category 'main_slider' posts -->
+
 			</div>
 		</div>
 	</section>
