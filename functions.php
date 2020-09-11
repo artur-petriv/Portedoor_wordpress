@@ -2,6 +2,7 @@
 add_action('wp_enqueue_scripts', 'portedoor_scripts');
 
 function portedoor_scripts() {
+
 	// Main Styles
 	wp_enqueue_style( 'portedoor-style', get_stylesheet_uri() );
 
@@ -18,5 +19,7 @@ function portedoor_scripts() {
 		return $tag;
 	}
 };
+
+add_theme_support( 'custom-logo' );
 
 ?>
