@@ -21,18 +21,20 @@
 				</a>
 			</div>
 			<div class="header__part">
-				<div class="header__phone"><a class="header__phone-image" href="tel:14509002456"><svg
-							class="icon-phone header__phone-svg">
+				<div class="header__phone"><a class="header__phone-image"
+						href="tel:<?php the_field('phone_number_call', 2); ?>">
+						<svg class="icon-phone header__phone-svg">
 							<use xlink:href="<?php echo get_bloginfo('template_url'); ?>/assets/img/sprite.svg#phone"></use>
 						</svg></a>
-					<div class="header__phone-number"><a class="header__phone-link" href="tel:14509002456">+1 - 450 - 900 -
-							2456</a></div>
+					<div class="header__phone-number"><a class="header__phone-link"
+							href="tel:<?php the_field('phone_number_call', 2); ?>"><?php the_field('phone_number_visible', 2); ?></a>
+					</div>
 				</div>
 				<div class="header__working">
-					<div class="header__working-title">Available 7 days</div>
-					<div class="header__working-text">Visit only by appointment</div>
+					<div class="header__working-title"><?php the_field('work_time_title', 2); ?></div>
+					<div class="header__working-text"><?php the_field('work_time_description', 2); ?></div>
 				</div>
-				<div class="header__language"><a class="header__language-link" href="/">Fr</a></div>
+				<div class="header__language"><a class="header__language-link" href="<?php echo get_home_url(); ?>">En</a></div>
 			</div>
 		</div>
 	</header>

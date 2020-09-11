@@ -3,7 +3,7 @@
 	<main class="main">
 		<div class="bar">
 			<div class="bar-wrap">
-				<div class="bar__title">Modern interior doors from Europe</div>
+				<div class="bar__title"><?php the_field('header_bar_title'); ?></div>
 			</div>
 		</div>
 		<div class="main__galerry owl-carousel owl-main">
