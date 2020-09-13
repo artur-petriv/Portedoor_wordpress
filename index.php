@@ -49,6 +49,7 @@
 
 		</div>
 	</main>
+
 	<section class="advantage" id="adv">
 		<div class="container">
 			<div class="section__head">
@@ -154,6 +155,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="best">
 		<div class="container container__slide" id="container">
 			<div class="section__head">
@@ -216,6 +218,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="frame">
 		<div class="container container__slide">
 			<div class="section__head">
@@ -278,10 +281,11 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="doors">
 		<div class="bar">
 			<div class="bar-wrap">
-				<h3 class="bar__title">Get a good offer</h3><a class="bar__link btn"><span class="bar__text">Details</span><svg
+				<h3 class="bar__title"><?php the_field('header_bar_title_2'); ?></h3><a class="bar__link btn"><span class="bar__text">Details</span><svg
 						class="icon-arrow bar__svg">
 						<use xlink:href="<?php echo get_bloginfo('template_url'); ?>/assets/img/sprite.svg#arrow"></use>
 					</svg></a>
@@ -292,117 +296,57 @@
 		</div>
 		<div class="container">
 			<div class="doors__slider owl-carousel owl-frame">
-				<div class="doors__list">
-					<div class="doors__box">
-						<div class="doors__item">
-							<div class="doors__wrap"><img class="doors__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/doors_01.jpg" alt="Door">
-								<div class="doors__info">
-									<div class="doors__text">Price from</div>
-									<div class="doors__price">80.00 $</div>
-								</div>
-							</div>
-						</div>
-						<div class="doors__item">
-							<div class="doors__wrap"><img class="doors__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/doors_02.jpg" alt="Door">
-								<div class="doors__info">
-									<div class="doors__text">Price from</div>
-									<div class="doors__price">100.00 $</div>
-								</div>
-							</div>
-						</div>
-						<div class="doors__item">
-							<div class="doors__wrap"><img class="doors__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/doors_03.jpg" alt="Door">
-								<div class="doors__info">
-									<div class="doors__text">Price from</div>
-									<div class="doors__price">160.00 $</div>
-								</div>
-							</div>
-						</div>
-						<div class="doors__item">
-							<div class="doors__wrap"><img class="doors__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/doors_04.jpg" alt="Door">
-								<div class="doors__info">
-									<div class="doors__text">Price from</div>
-									<div class="doors__price">90.00 $</div>
-								</div>
+
+				<!-- End Render category 'interior' posts -->
+				<?php
+				$posts = get_posts( array(
+					'numberposts' => -1,
+					'category_name'    => 'interior',
+					'orderby'     => 'date',
+					'order'       => 'ASC',
+					'post_type'   => 'post',
+					'suppress_filters' => true,
+				) );
+
+				$count = 1;
+				
+				foreach( $posts as $post ) :
+					setup_postdata($post);
+					
+
+					if($count === 1) : ?>
+						<div class="doors__list">
+							<div class="doors__box">
+					<?php endif; ?>
+
+					<div class="doors__item">
+						<div class="doors__wrap">
+							<img class="doors__img" src="<?php the_field('item_img'); ?>" alt="Door">
+							<div class="doors__info">
+								<div class="doors__text"><?php the_field('item_text'); ?></div>
+								<div class="doors__price"><?php the_field('item_price') ?>.00 $</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="doors__list">
-					<div class="doors__box">
-						<div class="doors__item">
-							<div class="doors__wrap"><img class="doors__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/doors_05.jpg" alt="Door">
-								<div class="doors__info">
-									<div class="doors__text">Price from</div>
-									<div class="doors__price">230.00 $</div>
+
+					<?php
+						if($count === 4) : ?>
 								</div>
 							</div>
-						</div>
-						<div class="doors__item">
-							<div class="doors__wrap"><img class="doors__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/doors_07.jpg" alt="Door">
-								<div class="doors__info">
-									<div class="doors__text">Price from</div>
-									<div class="doors__price">60.00 $</div>
-								</div>
-							</div>
-						</div>
-						<div class="doors__item">
-							<div class="doors__wrap"><img class="doors__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/doors_001.jpg" alt="Door">
-								<div class="doors__info">
-									<div class="doors__text">Price from</div>
-									<div class="doors__price">90.00 $</div>
-								</div>
-							</div>
-						</div>
-						<div class="doors__item">
-							<div class="doors__wrap"><img class="doors__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/doors_002.jpg" alt="Door">
-								<div class="doors__info">
-									<div class="doors__text">Price from</div>
-									<div class="doors__price">90.00 $</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="doors__list">
-					<div class="doors__box">
-						<div class="doors__item">
-							<div class="doors__wrap"><img class="doors__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/doors_01.jpg" alt="Door">
-								<div class="doors__info">
-									<div class="doors__text">Price from</div>
-									<div class="doors__price">80.00 $</div>
-								</div>
-							</div>
-						</div>
-						<div class="doors__item">
-							<div class="doors__wrap"><img class="doors__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/doors_001.jpg" alt="Door">
-								<div class="doors__info">
-									<div class="doors__text">Price from</div>
-									<div class="doors__price">90.00 $</div>
-								</div>
-							</div>
-						</div>
-						<div class="doors__item">
-							<div class="doors__wrap"><img class="doors__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/doors_07.jpg" alt="Door">
-								<div class="doors__info">
-									<div class="doors__text">Price from</div>
-									<div class="doors__price">60.00 $</div>
-								</div>
-							</div>
-						</div>
-						<div class="doors__item">
-							<div class="doors__wrap"><img class="doors__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/doors_05.jpg" alt="Door">
-								<div class="doors__info">
-									<div class="doors__text">Price from</div>
-									<div class="doors__price">230.00 $</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+						<?php
+						$count = 0;
+						endif;
+
+					$count++;
+					endforeach;
+				?>
+				<?php wp_reset_postdata(); ?>
+				<!-- End Render category 'hardware' posts -->
+
 			</div>
 		</div>
 	</section>
+
 	<section class="achi">
 		<div class="container container__slide">
 			<div class="section__head">
@@ -667,6 +611,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="more">
 		<div class="container">
 			<div class="more__list owl-carousel owl-more" id="more">
@@ -730,6 +675,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="map">
 		<div class="bar">
 			<div class="bar-wrap">
@@ -756,6 +702,7 @@
 			</div>
 		</div>
 	</section>
+
 	<div class="popup" id="popup">
 		<div class="popup__overlay">
 			<div class="popup__container">
