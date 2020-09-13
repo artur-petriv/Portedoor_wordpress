@@ -53,7 +53,7 @@
 	<section class="advantage" id="adv">
 		<div class="container">
 			<div class="section__head">
-				<h3 class="section__title">Our advantages</h3>
+				<h3 class="section__title"><?php the_field('header_bar_title_2'); ?></h3>
 			</div>
 			<div class="advantage__list owl-carousel owl-adv">
 				<div class="advantage__item">
@@ -159,7 +159,7 @@
 	<section class="best">
 		<div class="container container__slide" id="container">
 			<div class="section__head">
-				<h3 class="section__title">Best Sellers</h3>
+				<h3 class="section__title"><?php the_field('header_bar_title_3'); ?></h3>
 			</div>
 			<div class="best__list owl-carousel owl-best">
 
@@ -222,7 +222,7 @@
 	<section class="frame">
 		<div class="container container__slide">
 			<div class="section__head">
-				<h3 class="section__title">Door frame, parts, hardware</h3>
+				<h3 class="section__title"><?php the_field('header_bar_title_4'); ?></h3>
 			</div>
 			<div class="best__list owl-carousel owl-hardware" id="frame__list">
 
@@ -285,14 +285,14 @@
 	<section class="doors">
 		<div class="bar">
 			<div class="bar-wrap">
-				<h3 class="bar__title"><?php the_field('header_bar_title_2'); ?></h3><a class="bar__link btn"><span class="bar__text">Details</span><svg
+				<h3 class="bar__title"><?php the_field('header_bar_title_5'); ?></h3><a class="bar__link btn"><span class="bar__text">Details</span><svg
 						class="icon-arrow bar__svg">
 						<use xlink:href="<?php echo get_bloginfo('template_url'); ?>/assets/img/sprite.svg#arrow"></use>
 					</svg></a>
 			</div>
 		</div>
 		<div class="section__head">
-			<h3 class="section__title">Doors to the Interior</h3>
+			<h3 class="section__title"><?php the_field('header_bar_title_6'); ?></h3>
 		</div>
 		<div class="container">
 			<div class="doors__slider owl-carousel owl-frame">
@@ -350,7 +350,7 @@
 	<section class="achi">
 		<div class="container container__slide">
 			<div class="section__head">
-				<h3 class="section__title">Our achievements</h3>
+				<h3 class="section__title"><?php the_field('header_bar_title_7'); ?></h3>
 			</div>
 			<div class="achi__list owl-carousel owl-achi" id="achi">
 				
@@ -458,7 +458,7 @@
 	<section class="map">
 		<div class="bar">
 			<div class="bar-wrap">
-				<h3 class="bar__title">Redeem exclusive offer</h3><a class="bar__link"><span
+				<h3 class="bar__title"><?php the_field('header_bar_title_8'); ?></h3><a class="bar__link"><span
 						class="bar__text btn">Details</span><svg class="icon-arrow bar__svg">
 						<use xlink:href="<?php echo get_bloginfo('template_url'); ?>/assets/img/sprite.svg#arrow"></use>
 					</svg></a>
@@ -466,7 +466,7 @@
 		</div>
 		<div class="container">
 			<div class="section__head">
-				<h3 class="section__title">Find as on the map</h3>
+				<h3 class="section__title"><?php the_field('header_bar_title_9'); ?></h3>
 			</div>
 			<div class="map__wrap">
 				<div class="map__frame" id="map"></div>
