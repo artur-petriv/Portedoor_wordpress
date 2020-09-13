@@ -353,261 +353,40 @@
 				<h3 class="section__title">Our achievements</h3>
 			</div>
 			<div class="achi__list owl-carousel owl-achi" id="achi">
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_01.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_01.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_01.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_02.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_02.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_02.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_03.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_03.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_03.jpg"
-												alt="Achievement Image"></div>
+				
+				<!-- End Render category 'achiev' posts -->
+				<?php
+					$posts = get_posts( array(
+						'numberposts' => -1,
+						'category_name'    => 'achiev',
+						'orderby'     => 'date',
+						'order'       => 'ASC',
+						'post_type'   => 'post',
+						'suppress_filters' => true,
+					) );
+
+					foreach( $posts as $post ) :
+						setup_postdata($post);
+						?>
+						<div class="achi__item"><a href="<?php the_field('img_zoom'); ?>" data-fancybox="achi-g">
+							<div class="bs">
+								<div class="bs__container">
+									<div class="bs__wrap">
+										<div class="bs__item">
+											<div class="bs__part"><img class="bs__img" src="<?php the_field('img_1') ?>" alt="Achievement Image"></div>
+										</div>
+										<div class="bs__item">
+											<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php the_field('img_2'); ?>" alt="Achievement Image"></div>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_04.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_04.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_04.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_05.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_05.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_05.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_06.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_06.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_06.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_07.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_07.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_07.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_08.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_08.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_08.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_d_09.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_09.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_09.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_d_09.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_09.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_09.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_d_10.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_10.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_10.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_d_11.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_11.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_11.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_d_12.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_12.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_12.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_d_13.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_13.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_13.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_d_14.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_14.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_14.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_d_15.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_15.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_15.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
-				<div class="achi__item"><a href="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_d_16.jpg" data-fancybox="achi-g">
-						<div class="bs">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_16.jpg" alt="Achievement Image"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="bs__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/achi_s_16.jpg"
-												alt="Achievement Image"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a></div>
+						</a>
+					</div>
+				<?php endforeach; ?>
+				<?php wp_reset_postdata(); ?>
+				<!-- End Render category 'hardware' posts -->
+
 			</div>
 		</div>
 	</section>
