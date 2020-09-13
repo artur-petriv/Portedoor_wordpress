@@ -183,7 +183,7 @@
 											<div class="bs__part"><img class="best__img" src="<?php the_field('item_img_1'); ?>" alt="Item"></div>
 										</div>
 										<div class="bs__item">
-											<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php the_field('item_img_1'); ?>" alt="Item"></div>
+											<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php the_field('item_img_2'); ?>" alt="Item"></div>
 										</div>
 									</div>
 								</div>
@@ -222,126 +222,59 @@
 				<h3 class="section__title">Door frame, parts, hardware</h3>
 			</div>
 			<div class="best__list owl-carousel owl-hardware" id="frame__list">
-				<div class="best__item">
-					<div class="best__content">
-						<div class="best__image">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/frames_01_1.jpg" alt="Frame"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/frames_01_2.jpg" alt="Frame">
+
+				<!-- End Render category 'hardware' posts -->
+				<?php
+				$posts = get_posts( array(
+					'numberposts' => -1,
+					'category_name'    => 'hardware',
+					'orderby'     => 'date',
+					'order'       => 'ASC',
+					'post_type'   => 'post',
+					'suppress_filters' => true,
+				) );
+
+				foreach( $posts as $post ) :
+					setup_postdata($post);
+					?>
+					<div class="best__item">
+						<div class="best__content">
+							<div class="best__image">
+								<div class="bs__container">
+									<div class="bs__wrap">
+										<div class="bs__item">
+											<div class="bs__part"><img class="best__img" src="<?php the_field('item_img_1'); ?>" alt="Frame"></div>
+										</div>
+										<div class="bs__item">
+											<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php the_field('item_img_2'); ?>" alt="Frame">
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="best__title best__title_big">Door frame system</div>
-						<div class="best__price">130 $</div>
-						<div class="best__descr">molding and hinges included</div>
-						<div class="best__colors">
-							<div class="best__colors-title">Colors:</div>
-							<div class="best__colors-list">
-								<div class="best__color color-sand"></div>
-								<div class="best__color color-dark-wood"></div>
-								<div class="best__color color-silver"></div>
-							</div>
-						</div>
-					</div>
-					<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a
-								discount</span></button></div>
-				</div>
-				<div class="best__item">
-					<div class="best__content">
-						<div class="best__image">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/frames_02_1.jpg" alt="Frame"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/frames_02_2.jpg" alt="Frame">
-										</div>
-									</div>
+							<div class="best__title best__title_big"><?php the_title(); ?></div>
+							<div class="best__price"><?php the_field('item_price'); ?> $</div>
+							<div class="best__descr"><?php the_field('item_descr'); ?></div>
+							<div class="best__colors">
+								<div class="best__colors-title">Colors:</div>
+								<div class="best__colors-list">
+									<?php
+										$colors = get_field('item_colors');
+
+										if( $colors ) : 
+											foreach( $colors as $color ): ?>
+												<div class="best__color color-<?php echo $color; ?>"></div>
+											<?php endforeach; ?>	
+										<?php endif; ?>
 								</div>
 							</div>
 						</div>
-						<div class="best__title best__title_big">Door frame system</div>
-						<div class="best__price">130 $</div>
-						<div class="best__descr">molding and hinges included</div>
-						<div class="best__colors">
-							<div class="best__colors-title">Colors:</div>
-							<div class="best__colors-list">
-								<div class="best__color color-sand"></div>
-								<div class="best__color color-dark-wood"></div>
-								<div class="best__color color-silver"></div>
-							</div>
-						</div>
+						<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text"><?php the_field('item_button_name'); ?></span></button></div>
 					</div>
-					<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a
-								discount</span></button></div>
-				</div>
-				<div class="best__item">
-					<div class="best__content">
-						<div class="best__image">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/frames_03_1.jpg" alt="Frame"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/frames_03_2.jpg" alt="Frame">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="best__title best__title_big">Extensions for very thick walls</div>
-						<div class="best__price">70 $</div>
-						<div class="best__descr">set for 1 door</div>
-						<div class="best__colors">
-							<div class="best__colors-title">Colors:</div>
-							<div class="best__colors-list">
-								<div class="best__color color-sand"></div>
-								<div class="best__color color-dirt"></div>
-								<div class="best__color color-silver"></div>
-							</div>
-						</div>
-					</div>
-					<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a
-								discount</span></button></div>
-				</div>
-				<div class="best__item">
-					<div class="best__content">
-						<div class="best__image">
-							<div class="bs__container">
-								<div class="bs__wrap">
-									<div class="bs__item">
-										<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/frames_01_1.jpg" alt="Frame"></div>
-									</div>
-									<div class="bs__item">
-										<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/frames_01_2.jpg" alt="Frame">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="best__title best__title_big">No mortise hinges</div>
-						<div class="best__price">15 $</div>
-						<div class="best__descr">set of 2 hinges</div>
-						<div class="best__colors">
-							<div class="best__colors-title">Colors:</div>
-							<div class="best__colors-list">
-								<div class="best__color color-sand"></div>
-								<div class="best__color color-dirt"></div>
-								<div class="best__color color-silver"></div>
-							</div>
-						</div>
-					</div>
-					<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a
-								discount</span></button></div>
-				</div>
+				<?php endforeach; ?>
+				<?php wp_reset_postdata(); ?>
+				<!-- End Render category 'hardware' posts -->
+
 			</div>
 		</div>
 	</section>
