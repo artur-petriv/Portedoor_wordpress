@@ -12,16 +12,16 @@
 			<?php
 				$posts = get_posts( array(
 					'numberposts' => -1,
-					'category'    => 'main_slider',
+					'category_name'    => 'main_slider',
 					'orderby'     => 'date',
 					'order'       => 'ASC',
 					'post_type'   => 'post',
 					'suppress_filters' => true,
 				) );
 
-				foreach( $posts as $post ){
+				foreach( $posts as $post ) :
 					setup_postdata($post);
-						?>
+					?>
 						<div class="main__item">
 							<div class="main__parts">
 								<div class="main__part main__part-first">
@@ -43,10 +43,8 @@
 								</div>
 							</div>
 						</div>
-					<?php
-					}
-				wp_reset_postdata();
-			?>
+				<?php endforeach; ?>
+			<?php wp_reset_postdata(); ?>
 			<!-- End Render category 'main_slider' posts -->
 
 		</div>
@@ -163,50 +161,56 @@
 			</div>
 			<div class="best__list owl-carousel owl-best">
 
-				<!-- Render category 'best-sellers' posts -->
+				<!-- Render category 'main_slider' posts -->
 				<?php
 					$posts = get_posts( array(
-						'numberposts' => -1,
-						'category'    => 'best-sellers',
-						'orderby'     => 'date',
-						'order'       => 'DESC',
-						'post_type'   => 'post',
-						'suppress_filters' => true,
-					) );
+					'numberposts' => -1,
+					'category_name'    => 'best_sellers',
+					'orderby'     => 'date',
+					'order'       => 'ASC',
+					'post_type'   => 'post',
+					'suppress_filters' => true
+				) );
 
-					foreach( $posts as $post ){
-						setup_postdata($post);
-							?>
-								<div class="best__item">
-									<div class="best__image">
-										<div class="bs__container">
-											<div class="bs__wrap">
-												<div class="bs__item">
-													<div class="bs__part"><img class="best__img" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_01_1.jpg" alt="Item"></div>
-												</div>
-												<div class="bs__item">
-													<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/items_01_1.jpg" alt="Item"></div>
-												</div>
-											</div>
+				foreach( $posts as $post ) :
+					setup_postdata($post);
+					?>
+						<div class="best__item">
+							<div class="best__image">
+								<div class="bs__container">
+									<div class="bs__wrap">
+										<div class="bs__item">
+											<div class="bs__part"><img class="best__img" src="<?php the_field('item_img_1'); ?>" alt="Item"></div>
+										</div>
+										<div class="bs__item">
+											<div class="bs__part"><img class="best__img owl-lazy" data-src="<?php the_field('item_img_1'); ?>" alt="Item"></div>
 										</div>
 									</div>
-									<div class="best__content">
-										<div class="best__title"><?php the_title(); ?></div>
-										<div class="best__price">from 135 $</div>
-										<div class="best__descr">Material: Wood + MDF + Acoustic Filler</div>
-										<div class="best__colors">
-											<div class="best__colors-title">Colors:</div>
-											<div class="best__colors-list">
-												<div class="best__color color-sand"></div>
-											</div>
-										</div>
-									</div>
-									<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text">Get a discount</span></button></div>
 								</div>
-							<?php
-					}
-					wp_reset_postdata(); // сброс
-				?>
+							</div>
+							<div class="best__content">
+								<div class="best__title"><?php the_title(); ?></div>
+								<div class="best__price">from <?php the_field('item_price'); ?> $</div>
+								<div class="best__descr"><?php the_field('item_descr'); ?></div>
+								<div class="best__colors">
+									<div class="best__colors-title">Colors:</div>
+									<div class="best__colors-list">
+										<?php
+											$colors = get_field('item_colors');
+
+											if( $colors ) : 
+												foreach( $colors as $color ): ?>
+													<div class="best__color color-<?php echo $color; ?>"></div>
+												<?php endforeach; ?>	
+											<?php endif; ?>
+									</div>
+								</div>
+							</div>
+							<div class="best__action"><button class="best__link btn button_c"><span class="best__link-text"><?php the_field('item_button_name'); ?></span></button></div>
+						</div>
+				<?php endforeach; ?>
+
+				<?php wp_reset_postdata(); ?>
 				<!-- End Render category 'main_slider' posts -->
 
 			</div>
